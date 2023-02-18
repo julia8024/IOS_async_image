@@ -70,6 +70,25 @@ struct ContentView: View {
 }
 ```
 
+# 이미지명을 변수로 지정
+> refresh method
+```swift
+// refresh delegate
+func needToRefresh(_ imageName: String) {
+  // make 'serverData' by json decode 'data'
+  imageUrl = "http://localhost:8080/image?value=" + imageName
+}
+```
+
+> how to use
+``` swift
+Button {
+  needToRefresh("compose")
+} label: {
+  Text("이미지 불러오기")
+}
+```
+
 > 2023.02.19.(SUN)
 >  - 서버에서 이미지 가져오기 구현 (비동기)<br>
 >  - 이미지 한 장만 URL로 지정하여 가져옴
