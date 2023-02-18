@@ -13,10 +13,11 @@ struct ContentView: View {
 //    @State private var profileImage = AsyncWebImage(image: nil, highlightedImage: UIImage(named: "person.fill"))
     
     @State private var imageUrl = ""
+    
     var body: some View {
         VStack {
             Button {
-                needToRefresh()
+                needToRefresh("compose")
             } label: {
                 Text("이미지 불러오기")
             }
@@ -37,10 +38,8 @@ struct ContentView: View {
     }
     
     // refresh delegate
-    func needToRefresh() {
+    func needToRefresh(_ imageName: String) {
         // make 'serverData' by json decode 'data'
-        imageUrl = "http://localhost:8080/image?value=compose"
-        
-
+        imageUrl = "http://localhost:8080/image?value=" + imageName
     }
 }
