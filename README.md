@@ -35,7 +35,7 @@ Button {
 ```
 
 # Code
-```
+```swift
 
 struct ContentView: View {
     
